@@ -1,0 +1,149 @@
+[
+  {
+    "category": "INTERNSHIP",
+    "items": [
+      {
+        "id": "1",
+        "name": "Software Engineer Intern",
+        "company": "Labcorp",
+        "dates": "Incoming June 2026",
+        "tag": "",
+        "description": "description description description",
+        "link": "",
+        "displayImage": "",
+        "hoverImage": ""
+      }
+    ]
+  },
+  {
+    "category": "RESEARCH",
+    "items": [
+      {
+        "id": "2",
+        "name": "Hypothesis Evaluation Agent",
+        "company": "UCLA HCI Research",
+        "dates": "Apr 2026 - Present",
+        "tag": "Ongoing",
+        "description": "description description description",
+        "link": "",
+        "displayImage": "",
+        "hoverImage": ""
+      },
+      {
+        "id": "3",
+        "name": "MCP for UI Designs",
+        "company": "UCLA HCI Research",
+        "dates": "Mar 2026 - Present",
+        "tag": "Researcher, Ongoing [TODO: make this into two circly tags]",
+        "description": "description description description",
+        "link": "",
+        "displayImage": "",
+        "hoverImage": ""
+      },
+      {
+        "id": "4",
+        "name": "Agentic AI",
+        "company": "UCLA HCI Research",
+        "dates": "Jan 2026 - Mar 2026",
+        "tag": "",
+        "description": "description description description",
+        "link": "",
+        "displayImage": "",
+        "hoverImage": ""
+      },
+      {
+        "id": "5",
+        "name": "AI Meeting Assistants",
+        "company": "UCLA HCI Research",
+        "dates": "Sept 2025 - Apr 2026",
+        "tag": "Researcher",
+        "description": "description description description",
+        "link": "",
+        "displayImage": "",
+        "hoverImage": ""
+      },
+      {
+        "id": "6",
+        "name": "HALO",
+        "company": "UCLA HCI Research",
+        "dates": "June 2025 - Apr 2026",
+        "tag": "Under Review",
+        "description": "description description description",
+        "link": "",
+        "displayImage": "",
+        "hoverImage": ""
+      },
+      {
+        "id": "7",
+        "name": "RAGPPI",
+        "company": "UCLA HCI Research",
+        "dates": "Apr 2025 - Dec 2025",
+        "tag": "Published",
+        "description": "description description description",
+        "link": "",
+        "displayImage": "",
+        "hoverImage": ""
+      },
+      {
+        "id": "8",
+        "name": "Gen AI Patterns",
+        "company": "UCLA HCI Research",
+        "dates": "Mar 2025 - June 2025",
+        "tag": "Researcher",
+        "description": "description description description",
+        "link": "",
+        "displayImage": "",
+        "hoverImage": ""
+      },
+      {
+        "id": "9",
+        "name": "Overreliance",
+        "company": "UCLA HCI Research",
+        "dates": "Oct 2024 - Feb 2025",
+        "tag": "",
+        "description": "description description description",
+        "link": "",
+        "displayImage": "",
+        "hoverImage": ""
+      },
+      {
+        "id": "10",
+        "name": "RoomPalette: Gen AI for Interior Design",
+        "company": "NTU HCI Lab",
+        "dates": "June 2024 - Sept 2024",
+        "tag": "",
+        "description": "description description description",
+        "link": "",
+        "displayImage": "",
+        "hoverImage": ""
+      }
+    ]
+  },
+  {
+    "category": "STUDENT ORGANIZATION",
+    "items": [
+      {
+        "id": "11",
+        "name": "President",
+        "company": "ACM AI at UCLA",
+        "dates": "Mar 2026 - Present",
+        "tag": "",
+        "description": "Lead chapter initiatives, events, and member engagement.",
+        "link": "",
+        "displayImage": "",
+        "hoverImage": ""
+      },
+      {
+        "id": "12",
+        "name": "Events Officer",
+        "company": "ACM AI at UCLA",
+        "dates": "Apr 2025 - Mar 2026",
+        "tag": "",
+        "description": "Coordinated workshops and speaker events for the student chapter.",
+        "link": "",
+        "displayImage": "",
+        "hoverImage": ""
+      }
+    ]
+  }
+]

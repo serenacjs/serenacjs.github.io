@@ -1,0 +1,110 @@
+import { promises as fs } from 'fs';
+import path from 'path';
+import Sidebar from '../components/Sidebar';
+
+interface UpdateItem {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+}
+
+interface HomeExperienceItem {
+  id: string;
+  title: string;
+  organization: string;
+  dates: string;
+}
+
+async function getUpdatesData(): Promise<UpdateItem[]> {
+  const filePath = path.join(process.cwd(), 'data', 'updates.json');
+  const fileContents = await fs.readFile(filePath, 'utf8');
+  return JSON.parse(fileContents);
+}
+
+async function getHomeExperienceData(): Promise<HomeExperienceItem[]> {
+  const filePath = path.join(process.cwd(), 'data', 'experience_brief.json');
+  const fileContents = await fs.readFile(filePath, 'utf8');
+  return JSON.parse(fileContents);
+}
+
+export default async function Home() {
+  const updates = await getUpdatesData();
+  const experience = await getHomeExperienceData();
+
+  return (
+    <div className="flex min-h-screen">
+      <Sidebar />
+
+      <div className="w-2/3 ml-auto min-h-screen overflow-y-auto">
+
+        <main className="px-5 py-20">
+
+          {/* about me */}
+          <section id="home" className="grid gap-8 pb-5">
+            <div>
+              <p className="text-sm text-black/60">Hi! I'm ...</p>
+              <h1 className="text-5xl font-bold mt-3 font-heading">Serena Chang</h1>
+              <p className="mt-2 text-base text-black/50 font-body">JiaSyuan Chang</p>
+              <p className="mt-2 text-lg text-black font-body">UCLA | Junior | Cognitive Science & Data Science Engineering</p>
+            </div>
+
+            <div className="grid gap-6 text-black">
+              <p className="max-w-3xl text-lg leading-relaxed">
+                My work focuses on human-AI interaction, specifically exploring ways AI systems can support complex human workflows and decision making.
+              </p>
+              <div className="space-y-2 text-lg">
+                <p>
+                  <span>Currently, I'm</span>
+                </p>
+                <ul className="list-disc list-inside space-y-2 text-black pl-4">
+                  <li>Researcher in UCLA HCI Research lab (Advisor: Xiang 'Anthony' Chen)</li>
+                  <li>President for ACM AI at UCLA</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section className="pt-16">
+            {/* updates */}
+            <div className="grid gap-12">
+              <div>
+                <h2 className="text-2xl font-bold mb-4 font-heading">Updates</h2>
+                <div className="relative">
+                  <div className="h-[100px] overflow-y-auto pr-2 space-y-4 scrollbar-thin scrollbar-thumb-transparent hover:scrollbar-thumb-gray-400">
+                    {updates.map((update) => (
+                      <div key={update.id} className="flex items-start gap-0.5">
+                        <span className="w-[100px] shrink-0 text-base font-semibold text-black/70">{update.date}</span>
+                        <div>
+                          <p className="text-base text-black/75 flex-1">{update.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+                <div className="absolute bottom-x left-1/4 -translate-x-1/2 text-gray-400">
+                    ↓
+                </div>
+                </div>
+              </div>
+
+            {/* experience */}
+              <div>
+                <h2 className="text-2xl font-bold mb-4 font-heading">Experience</h2>
+                <div className="space-y-4 text-base text-black/85">
+                  {experience.map((item) => (
+                    <div key={item.id} className="flex justify-between gap-4">
+                      <div>
+                        <p className="font-semibold">{item.title}<span className="font-normal italic">{", "+item.organization}</span></p>
+                      </div>
+                      <p className="text-right">{item.dates}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "10",
+    "description": "Attended UR2PhD Undergrad Workshop & Research Showcase",
+    "date": "Apr 2026"
+  },
+  {
+    "id": "9",
+    "description": "Submitted to UIST",
+    "date": "Mar 2026"
+  },
+  {
+    "id": "8",
+    "description": "Pretty sure missed some stuff here",
+    "date": "IDK 2026"
+  },
+  {
+    "id": "7",
+    "description": "RAGPPI paper was accepted to EACL 2026 (Oral)",
+    "date": "Jan 2026"
+  }, 
+  {
+    "id": "6",
+    "description": "Some other stuff happened (i think... acm ai, submissions submissions)",
+    "date": "IDK 2025"
+  },
+  {
+    "id": "5",
+    "description": "Submitted to DIS 2025",
+    "date": "Jan 2025"
+  },
+  {
+    "id": "4",
+    "description": "joined lab, did stuff?",
+    "date": "IDK 2025"
+  },
+  {
+    "id": "3",
+    "description": "Submitted to CHI 2025",
+    "date": "Sep 2024"
+  }, 
+  {
+    "id": "2",
+    "description": "Joined NTU HCI Lab as a Research Assistant for the Summer",
+    "date": "Jun 2024"
+  },
+  {
+    "id": "1",
+    "description": "Started at UCLA as Cognitive Science Major",
+    "date": "Sep 2023"
+  }
+]
