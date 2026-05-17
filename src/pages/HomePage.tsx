@@ -1,6 +1,6 @@
-import { promises as fs, link } from 'fs';
-import path from 'path';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../../components/Sidebar';
+import updatesData from '../../data/updates.json';
+import experienceData from '../../data/experience_brief.json';
 
 interface UpdateItem {
   id: string;
@@ -17,34 +17,19 @@ interface HomeExperienceItem {
   link: string;
 }
 
-async function getUpdatesData(): Promise<UpdateItem[]> {
-  const filePath = path.join(process.cwd(), 'data', 'updates.json');
-  const fileContents = await fs.readFile(filePath, 'utf8');
-  return JSON.parse(fileContents);
-}
+const updates = updatesData as UpdateItem[];
+const experience = experienceData as HomeExperienceItem[];
 
-async function getHomeExperienceData(): Promise<HomeExperienceItem[]> {
-  const filePath = path.join(process.cwd(), 'data', 'experience_brief.json');
-  const fileContents = await fs.readFile(filePath, 'utf8');
-  return JSON.parse(fileContents);
-}
-
-export default async function Home() {
-  const updates = await getUpdatesData();
-  const experience = await getHomeExperienceData();
-
+export default function HomePage() {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
 
       <div className="w-2/3 ml-auto min-h-screen overflow-y-auto">
-
         <main className="px-5 py-20">
-
-          {/* about me */}
           <section id="home" className="grid gap-8 pb-5">
             <div>
-              <p className="text-sm text-black/60">HELLO!</p> 
+              <p className="text-sm text-black/60">HELLO!</p>
               <h1 className="text-5xl font-bold mt-3 font-heading">Serena Chang</h1>
               <p className="mt-2 text-base text-black/50 font-body">JiaSyuan Chang</p>
               <p className="mt-2 text-lg text-black font-body">UCLA | Junior | Cognitive Science & Data Science Engineering</p>
@@ -63,11 +48,13 @@ export default async function Home() {
                   <li>President for ACM AI at UCLA</li>
                 </ul>
               </div>
+              <p className="max-w-3xl text-lg leading-relaxed italic">
+                Note: Still in the process of updating descriptions for experiences (aka some placeholders are used for now, tagged with "[Placeholder]")
+              </p>
             </div>
           </section>
 
           <section className="pt-16">
-            {/* updates */}
             <div className="grid gap-12">
               <div>
                 <h2 className="text-2xl font-bold mb-4 font-heading">Updates</h2>
@@ -81,30 +68,29 @@ export default async function Home() {
                         </div>
                       </div>
                     ))}
-                </div>
-                <div className="absolute bottom-x left-1/4 -translate-x-1/2 text-gray-400">
+                  </div>
+                  <div className="absolute bottom-x left-1/4 -translate-x-1/2 text-gray-400">
                     ↓
-                </div>
+                  </div>
                 </div>
               </div>
 
-            {/* experience */}
               <div>
                 <h2 className="text-2xl font-bold mb-4 font-heading">Experience</h2>
                 <div className="space-y-4 text-base text-black/85">
                   {experience.map((item) => item.link ? (
                     <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                      <div key={item.id} className="flex justify-between gap-4">
+                      <div className="flex justify-between gap-4">
                         <div>
-                          <p className="font-semibold">{item.title}<span className="font-normal italic">{", "+item.organization}</span></p>
+                          <p className="font-semibold">{item.title}<span className="font-normal italic">{", " + item.organization}</span></p>
                         </div>
                         <p className="text-right">{item.dates}</p>
                       </div>
                     </a>
-                  ) :(
+                  ) : (
                     <div key={item.id} className="flex justify-between gap-4">
                       <div>
-                        <p className="font-semibold">{item.title}<span className="font-normal italic">{", "+item.organization}</span></p>
+                        <p className="font-semibold">{item.title}<span className="font-normal italic">{", " + item.organization}</span></p>
                       </div>
                       <p className="text-right">{item.dates}</p>
                     </div>

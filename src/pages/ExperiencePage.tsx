@@ -1,7 +1,6 @@
-import { promises as fs } from 'fs';
-import path from 'path';
 import Sidebar from '../../components/Sidebar';
 import ExperienceSections from '../../components/ExperienceSections';
+import sectionsData from '../../data/experience_detail.json';
 
 interface ExperienceItem {
   id: string;
@@ -20,15 +19,9 @@ interface ExperienceSection {
   items: ExperienceItem[];
 }
 
-async function getExperienceSections(): Promise<ExperienceSection[]> {
-  const filePath = path.join(process.cwd(), 'data', 'experience_detail.json');
-  const fileContents = await fs.readFile(filePath, 'utf8');
-  return JSON.parse(fileContents);
-}
+const sections = sectionsData as ExperienceSection[];
 
-export default async function ExperiencePage() {
-  const sections = await getExperienceSections();
-
+export default function ExperiencePage() {
   return (
     <div className="flex min-h-screen">
       <Sidebar />

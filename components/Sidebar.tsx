@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, GraduationCap, ArrowDownToLine} from "lucide-react";
+import { Mail, GraduationCap, ArrowDownToLine } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 {/** TODO: add in images */}
 {/** TODO: automate this? take everything from the folder automatically*/}
@@ -30,8 +31,8 @@ export default function Sidebar() {
         <div className="border-b border-black/20 pb-6 px-6">
           <nav className="flex gap-10 text-sm uppercase tracking-[0.35em] text-black/70">
             {/** TODO: maybe maybe maybe add an icon here (in fromt of home)... like a drawing casual thing...?*/}
-            <a href="/#home" className="hover:text-black">Home</a>
-            <a href="/experience" className="hover:text-black">Experience</a>
+            <Link to="/" className="hover:text-black">Home</Link>
+            <Link to="/experience" className="hover:text-black">Experience</Link>
           </nav>
         </div>
       </header>
