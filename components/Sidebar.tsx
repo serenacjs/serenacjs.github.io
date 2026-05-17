@@ -11,7 +11,7 @@ const images = [
   // '/pfp/acm_ai.jpeg',
   '/pfp/getty_ctr.jpeg',
   '/pfp/getty_villa.jpeg',
-  '/pfp/river.jpg',
+  '/pfp/river.jpeg',
   '/pfp/jumpy.jpeg'
 ];
 

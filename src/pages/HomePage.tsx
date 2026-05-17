@@ -48,7 +48,7 @@ export default function HomePage() {
                   <li>President for ACM AI at UCLA</li>
                 </ul>
               </div>
-              <p className="max-w-3xl text-lg leading-relaxed italic">
+              <p className="max-w-3xl text-base leading-relaxed italic">
                 Note: Still in the process of updating descriptions for experiences (aka some placeholders are used for now, tagged with "[Placeholder]")
               </p>
             </div>
