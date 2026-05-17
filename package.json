@@ -5,9 +5,9 @@
   "homepage": "https://serenacjs.github.io",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "lucide-react": "^1.14.0",
