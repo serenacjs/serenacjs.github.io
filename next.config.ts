@@ -8,6 +8,5 @@ module.exports = {
     unoptimized: true,
   },
 
-  assetPrefix: isProd ? '' : '',
-  basePath: '',
+  assetPrefix: './',
 }
