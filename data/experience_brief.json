@@ -3,24 +3,28 @@
     "id": "1",
     "title": "[Incoming] Software Engineer Intern",
     "organization": "Labcorp",
-    "dates": "--"
+    "dates": "--",
+    "link": "https://www.labcorp.com/"
   },
   {
     "id": "2",
     "title": "Researcher",
     "organization": "UCLA HCI Research",
-    "dates": "Mar 2025 - Present"
+    "dates": "Mar 2025 - Present",
+    "link": "https://hci.ucla.edu/#projects"
   },
   {
     "id": "3",
     "title": "Research Assistant",
     "organization": "UCLA HCI Research",
-    "dates": "Oct 2024 - Present"
+    "dates": "Oct 2024 - Present",
+    "link": "https://hci.ucla.edu/#projects"
   },
   {
     "id": "4",
     "title": "Research Assistant",
     "organization": "NTU HCI Lab",
-    "dates": "June 2024 - Sept 2024"
+    "dates": "June 2024 - Sept 2024",
+    "link": "https://ntuhci.org/"
   }
 ]

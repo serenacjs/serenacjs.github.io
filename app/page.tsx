@@ -1,4 +1,4 @@
-import { promises as fs } from 'fs';
+import { promises as fs, link } from 'fs';
 import path from 'path';
 import Sidebar from '../components/Sidebar';
 
@@ -14,6 +14,7 @@ interface HomeExperienceItem {
   title: string;
   organization: string;
   dates: string;
+  link: string;
 }
 
 async function getUpdatesData(): Promise<UpdateItem[]> {
@@ -43,7 +44,7 @@ export default async function Home() {
           {/* about me */}
           <section id="home" className="grid gap-8 pb-5">
             <div>
-              <p className="text-sm text-black/60">Hi! I'm ...</p>
+              <p className="text-sm text-black/60">HELLO!</p> 
               <h1 className="text-5xl font-bold mt-3 font-heading">Serena Chang</h1>
               <p className="mt-2 text-base text-black/50 font-body">JiaSyuan Chang</p>
               <p className="mt-2 text-lg text-black font-body">UCLA | Junior | Cognitive Science & Data Science Engineering</p>
@@ -55,7 +56,7 @@ export default async function Home() {
               </p>
               <div className="space-y-2 text-lg">
                 <p>
-                  <span>Currently, I'm</span>
+                  <span>Currently, I'm...</span>
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-black pl-4">
                   <li>Researcher in UCLA HCI Research lab (Advisor: Xiang 'Anthony' Chen)</li>
@@ -91,7 +92,16 @@ export default async function Home() {
               <div>
                 <h2 className="text-2xl font-bold mb-4 font-heading">Experience</h2>
                 <div className="space-y-4 text-base text-black/85">
-                  {experience.map((item) => (
+                  {experience.map((item) => item.link ? (
+                    <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      <div key={item.id} className="flex justify-between gap-4">
+                        <div>
+                          <p className="font-semibold">{item.title}<span className="font-normal italic">{", "+item.organization}</span></p>
+                        </div>
+                        <p className="text-right">{item.dates}</p>
+                      </div>
+                    </a>
+                  ) :(
                     <div key={item.id} className="flex justify-between gap-4">
                       <div>
                         <p className="font-semibold">{item.title}<span className="font-normal italic">{", "+item.organization}</span></p>
