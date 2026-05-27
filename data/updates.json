@@ -1,5 +1,10 @@
 [
   {
+    "id": "11",
+    "description": "Presented my research of AI Meeting Assistants in UCLA Undergraduate Research Week",
+    "date": "May 2026"
+  },
+  {
     "id": "10",
     "description": "Attended UR2PhD Undergrad Workshop & Research Showcase",
     "date": "Apr 2026"
@@ -11,7 +16,7 @@
   },
   {
     "id": "8",
-    "description": "[Placeholder] Pretty sure missed some stuff here",
+    "description": "[Placeholder] Pretty sure missed some stuff here (nsf reu)",
     "date": "IDK 2026"
   },
   {

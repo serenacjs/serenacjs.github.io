@@ -79,15 +79,15 @@ export default function Sidebar() {
 
         {/* contact info */}
         <div className="flex flex-col space-y-2 text-left">
-          <a href="mailto:serenacjs@g.ucla.edu" className="flex items-center gap-2 hover:underline"><span className="w-[18px]"><Mail size={18} className="relative right-[1px]"/></span> <span>Email: <span className="italic">serenacjs@g.ucla.edu</span></span> </a>
+          <a href="mailto:serenacjs@g.ucla.edu" className="flex text-lg items-center gap-2 hover:underline"><span className="w-[18px]"><Mail size={18} className="relative right-[1px]"/></span> <span>Email: <span className="italic">serenacjs@g.ucla.edu</span></span> </a>
           <a></a>
           <a></a>
-          <a href="https://www.linkedin.com/in/serena-chang-878005245" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline"><span className="w-[18px]"><img src="/icon/linkedin.png" className="w-4 h-4" alt="GitHub"/></span>LinkedIn</a>
-          <a href="https://scholar.google.com/citations?user=30bGPfkAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline"><span className="w-[18px]"><GraduationCap size={18} className="relative right-[1px]"/></span>Google Scholar</a>
-          <a href="https://github.com/serenacjs" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline"><span className="w-[18px]"><img src="/icon/github.svg" className="w-4 h-4" alt="GitHub"/></span>GitHub</a>
+          <a href="https://www.linkedin.com/in/serena-chang-878005245" target="_blank" rel="noopener noreferrer" className="flex text-lg items-center gap-2 hover:underline"><span className="w-[18px]"><img src="/icon/linkedin.png" className="w-4 h-4" alt="GitHub"/></span>LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=30bGPfkAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" className="flex text-lg items-center gap-2 hover:underline"><span className="w-[18px]"><GraduationCap size={18} className="relative right-[1px]"/></span>Google Scholar</a>
+          <a href="https://github.com/serenacjs" target="_blank" rel="noopener noreferrer" className="flex text-lg items-center gap-2 hover:underline"><span className="w-[18px]"><img src="/icon/github.svg" className="w-4 h-4" alt="GitHub"/></span>GitHub</a>
           <a></a>
           <a></a>
-          <a href="/files/JiaSyuan_Chang_Resume.pdf" download className="flex items-center gap-2 hover:underline"><ArrowDownToLine size={18}/>Resume/CV</a>
+          <a href="/files/JiaSyuan_Chang_Resume.pdf" download className="flex text-lg items-center gap-2 hover:underline"><ArrowDownToLine size={18}/>Resume/CV</a>
         </div>
       </div>
     </div>

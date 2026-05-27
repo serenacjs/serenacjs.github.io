@@ -8,7 +8,7 @@
         "company": "Labcorp",
         "dates": "Incoming June 2026",
         "tag": "",
-        "description": "[Placeholder] description description description",
+        "description": "To Be Updated...",
         "link": "https://www.labcorp.com/",
         "displayImage": "",
         "hoverImage": ""
@@ -24,7 +24,7 @@
         "company": "UCLA HCI Research",
         "dates": "Apr 2026 - Present",
         "tag": "Ongoing",
-        "description": "[Placeholder] description description description",
+        "description": "Developing Reinforcement Learning AI system for hypothesis evaluations",
         "link": "",
         "displayImage": "",
         "hoverImage": ""
@@ -35,7 +35,7 @@
         "company": "UCLA HCI Research",
         "dates": "Mar 2026 - Present",
         "tag": "Researcher, Ongoing [TODO: make this into two circly tags]",
-        "description": "[Placeholder] description description description",
+        "description": "Exploring MCP’s integration into user workflows, providing structure to UI design process while maintaining for user flexibility and creativity",
         "link": "",
         "displayImage": "",
         "hoverImage": ""
@@ -46,18 +46,18 @@
         "company": "UCLA HCI Research",
         "dates": "Jan 2026 - Mar 2026",
         "tag": "",
-        "description": "[Placeholder] description description description [assisted with initial ___ of project]",
+        "description": "Explore implementation of AutoGen agents in pipelines, including API integration and architecture design for automation. Assisted with initial phases of this project.",
         "link": "",
         "displayImage": "",
         "hoverImage": ""
       },
       {
         "id": "5",
-        "name": "An Analysis on User's Use of AI Meeting Assistants",
+        "name": "Anayzing User's Usage of AI Meeting Assistants to Support Design Improvements",
         "company": "UCLA HCI Research",
         "dates": "Sept 2025 - Apr 2026",
         "tag": "Researcher",
-        "description": "[Placeholder] description description description",
+        "description": "Explored how AI meeting assistants support user workflows to understand areas of improvement. Presented as poster in UR2PhD Research Showcase 2026 and live-presentation in UCLA Undergraduate Research Week 2026",
         "link": "",
         "displayImage": "",
         "hoverImage": ""
@@ -67,8 +67,8 @@
         "name": "HALO: Computational & Interactive Support for Hypothesis Generation for Scientific Discovery",
         "company": "UCLA HCI Research",
         "dates": "June 2025 - Apr 2026",
-        "tag": "Under Review",
-        "description": "[Placeholder] description description description",
+        "tag": "NSF REU, Under Review",
+        "description": "Developed a molecular generation platform, integrating large language models, API routing, and database logging to support research workflows. Built pipeline that effectively filtered out 80% of low-quality molecules generated, improving system efficiency and usability.",
         "link": "",
         "displayImage": "",
         "hoverImage": ""
@@ -79,7 +79,7 @@
         "company": "UCLA HCI Research",
         "dates": "Apr 2025 - Dec 2025",
         "tag": "Published",
-        "description": "[Placeholder] description description description",
+        "description": "Implemented and evaluated GraphRAG. Prepared 50 sets of user study documents and analyzed expert responses with model outputs to identify patterns to guide model improvement.",
         "link": "https://aclanthology.org/2026.eacl-long.203/",
         "displayImage": "",
         "hoverImage": ""
@@ -90,7 +90,7 @@
         "company": "UCLA HCI Research",
         "dates": "Mar 2025 - June 2025",
         "tag": "Researcher",
-        "description": "[Placeholder] description description description",
+        "description": "Researched and identified 17 interactive design patterns across 20 Generative AI platforms, analyzing differences in user experience and integration strategies.",
         "link": "https://docs.google.com/presentation/d/1Qnv1ukibhbTf95lfyvntBsQbRuRRx4URe5Jp3gL1occ/edit?usp=sharing",
         "displayImage": "",
         "hoverImage": ""
@@ -101,7 +101,7 @@
         "company": "UCLA HCI Research",
         "dates": "Oct 2024 - Feb 2025",
         "tag": "Published",
-        "description": "[Placeholder] description description description",
+        "description": "Recruited 180+ participants and conducted 8 user experience experiments on human and AI interaction, managing communications with participants.",
         "link": "https://dl.acm.org/doi/full/10.1145/3772318.3790332",
         "displayImage": "",
         "hoverImage": ""
@@ -124,7 +124,7 @@
     "items": [
       {
         "id": "11",
-        "name": "President",
+        "name": "Co-President",
         "company": "ACM AI at UCLA",
         "dates": "Mar 2026 - Present",
         "tag": "",
