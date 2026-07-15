@@ -9,8 +9,9 @@ import { Link } from 'react-router-dom';
 const images = [
   '/pfp/royce_formal.jpeg',
   // '/pfp/acm_ai.jpeg',
-  '/pfp/getty_ctr.jpeg',
-  '/pfp/getty_villa.jpeg',
+  '/pfp/garden.png',
+  // '/pfp/getty_ctr.jpeg',
+  // '/pfp/getty_villa.jpeg',
   '/pfp/river.jpeg',
   '/pfp/jumpy.jpeg'
 ];
@@ -29,10 +30,10 @@ export default function Sidebar() {
       {/* navigation */}
       <header className="flex items-center justify-center">
         <div className="border-b border-black/20 pb-6 px-6">
-          <nav className="flex gap-10 text-sm uppercase tracking-[0.35em] text-black/70">
+          <nav className="flex gap-10 text-sm lowercase tracking-[0.35em] text-black/70">
             {/** TODO: maybe maybe maybe add an icon here (in fromt of home)... like a drawing casual thing...?*/}
-            <Link to="/" className="hover:text-black">Home</Link>
-            <Link to="/experience" className="hover:text-black">Experience</Link>
+            <Link to="/" className="hover:text-black">home</Link>
+            <Link to="/experience" className="hover:text-black">experience</Link>
           </nav>
         </div>
       </header>
