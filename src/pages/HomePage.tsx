@@ -34,7 +34,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-3 text-sm text-[color:var(--muted)] md:text-sm">JiaSyuan Chang</p>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-[color:var(--foreground)]/85 md:text-sm md:leading-8">
-              UCLA | Junior | Cognitive Science & Data Science Engineering
+              UCLA | Senior | Cognitive Science & Data Science Engineering
               {/* UCLA junior in Cognitive Science and Data Science Engineering, focusing on human-centered AI, interface design, and software systems that help people think, create, and collaborate more clearly. */}
             </p>
             <div className="mt-6 max-w-3xl space-y-3 text-sm leading-7 text-[color:var(--foreground)]">
