@@ -151,7 +151,6 @@ export default function Sidebar() {
           >
             <span className="flex flex-col">
               <span className="tracking-[0.2em] uppercase">Resume / CV</span>
-              <span className="mt-1 text-xs tracking-[0.14em] text-[color:var(--muted)]">Download PDF</span>
             </span>
             <ArrowDownToLine size={16} className="transition group-hover:translate-y-0.5" />
           </a>
