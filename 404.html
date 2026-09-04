@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="0; url=/" />
+    <script>
+      (function () {
+        var path = window.location.pathname + window.location.search + window.location.hash;
+        if (path !== '/' && path !== '/index.html') {
+          window.location.replace('/?p=' + encodeURIComponent(path));
+        } else {
+          window.location.replace('/');
+        }
+      })();
+    </script>
+    <title>Serena Chang</title>
+  </head>
+  <body></body>
+</html>
