@@ -39,7 +39,7 @@ export default function HomePage() {
             </p>
             <div className="mt-6 max-w-3xl space-y-3 text-sm leading-7 text-[color:var(--foreground)]">
               <p>
-                My work focuses on Human-Centered AI, combining human-computer interaction, artificial intelligence, and software engineering to explore how AI systems can support human workflows, decision-making, and collaboration across various application domains.
+                My work focuses on Human-Centered AI, combining human-computer interaction and artificial intelligence to explore how AI systems can support human workflows, decision-making, and collaboration across various application domains.
               </p>
               <p>
                 Currently, I'm...
