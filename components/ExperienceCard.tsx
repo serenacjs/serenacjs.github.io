@@ -1,15 +1,14 @@
-'use client';
-
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 
 interface ExperienceCardProps {
   name: string;
   company: string;
   dates: string;
   tag?: string;
-  displayImage?: string;
   description?: string;
   link?: string;
+  displayImage?: string;
   hoverImage?: string;
 }
 
@@ -18,64 +17,114 @@ export default function ExperienceCard({
   company,
   dates,
   tag,
-  displayImage,
   description,
   link,
+  displayImage,
   hoverImage,
 }: ExperienceCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-
-  const handleClick = () => {
-    if (link) {
-      window.open(link, '_blank');
+  const imageSrc = useMemo(() => {
+    if (isHovered && hoverImage) {
+      return hoverImage;
     }
-  };
+
+    return displayImage || hoverImage || '';
+  }, [displayImage, hoverImage, isHovered]);
 
   return (
-    <div
-      className={`bg-[#F0E8DF] p-6 rounded-lg shadow-md cursor-pointer transition-all duration-300 ${
-        isHovered ? 'transform scale-105' : ''
-      }`}
+    <article
+      className={[
+        'group transition-colors duration-300 bg-transparent',
+      ].join(' ')}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={handleClick}
     >
-      {!isHovered ? (
-        <div className="relative">
-          {tag ? (
-            <div className="absolute top-0 right-0 bg-gray-200 px-2 py-1 rounded text-sm">
-                {/** TODO: add colors*/}
-              {tag}
+      <button
+        type="button"
+        onClick={() => setIsExpanded((current) => !current)}
+        className="flex w-full items-start justify-between gap-4 px-5 py-4 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent-soft)]"
+        aria-expanded={isExpanded}
+        aria-label={isExpanded ? `Collapse ${name}` : `Expand ${name}`}
+      >
+        <div className="min-w-0 space-y-3">
+          <div className="flex flex-col gap-1">
+            <h3 className="font-heading text-xl leading-tight text-[color:var(--accent-deep)]">
+              {name}
+            </h3>
+            <p className="text-sm text-[color:var(--muted)]">{company}</p>
+          </div>
+
+        </div>
+
+        <div className="flex shrink-0 items-start gap-3 pt-1">
+          <span className="text-xs uppercase tracking-[0.22em] text-[color:var(--muted)] text-right">
+            {dates}
+          </span>
+
+          <ChevronDown
+            className={[
+              'mt-1 h-5 w-5 shrink-0 text-[color:var(--muted)] transition-transform duration-300',
+              isExpanded ? 'rotate-0' : '-rotate-90',
+            ].join(' ')}
+          />
+        </div>
+      </button>
+
+      <div
+        className={[
+          'grid overflow-hidden transition-all duration-300',
+          isExpanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0',
+        ].join(' ')}
+      >
+        <div className="min-h-0">
+          <div className="grid gap-4 px-5 py-5 md:grid-cols-[minmax(0,1.15fr)_minmax(230px,0.85fr)] md:items-stretch">
+            <div className="space-y-4">
+              {description ? (
+                <p className="max-w-3xl text-sm leading-7 text-[color:var(--foreground)]/85">
+                  {description}
+                </p>
+              ) : (
+                <p className="text-sm leading-7 text-[color:var(--muted)]">
+                  Details will be added here.
+                </p>
+              )}
+
+              <div className="flex flex-wrap gap-3">
+                {link ? (
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-white/60 px-4 py-2 text-xs uppercase tracking-[0.22em] text-[color:var(--accent-deep)] transition hover:bg-white"
+                  >
+                    <ExternalLink size={14} />
+                    Open link
+                  </a>
+                ) : null}
+              </div>
             </div>
-          ) : null}
-          <h3 className="text-xl font-semibold mb-1">{name}<span className = "font-normal text-base italic">, {company}</span></h3>
-          <p className="text-gray-600 mb-4">{dates}</p>
-          {displayImage ? (
-            <div className="flex justify-end">
-              <img src={displayImage} alt={name} className="w-16 h-16 object-cover rounded" />
+
+            <div className="overflow-hidden rounded-[24px] border border-[color:var(--border)] bg-white/60">
+              {imageSrc ? (
+                <img
+                  src={imageSrc}
+                  alt={`${name} preview`}
+                  className="h-full min-h-[220px] w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                />
+              ) : (
+                <div className="flex min-h-[220px] flex-col justify-between p-5">
+                  <div className="space-y-2">
+                    <p className="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">
+                      Image slot
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
-          ) : null}
+          </div>
         </div>
-      ) : (
-        <div className="relative">
-        {tag ? (
-        <div className="absolute top-0 right-0 bg-gray-200 px-2 py-1 rounded text-sm">
-            {tag}
-        </div>
-          ) : null}
-          <h3 className="text-xl font-semibold mb-2">{name}<span className = "font-normal text-base italic">, {company}</span></h3>
-          <p className="text-gray-600 mb-2">{dates}</p>
-          {description ? <p className="mb-4">{description}</p> : null}
-          {hoverImage ? (
-            <img src={hoverImage} alt={name} className="w-full h-32 object-cover rounded mb-2" />
-          ) : null}
-          {link ? (
-            <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-              View Project
-            </a>
-          ) : null}
-        </div>
-      )}
-    </div>
+      </div>
+    </article>
   );
 }

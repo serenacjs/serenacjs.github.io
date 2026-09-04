@@ -6,12 +6,11 @@
         "id": "1",
         "name": "Software Engineer Intern",
         "company": "Labcorp",
-        "dates": "Incoming June 2026",
+        "dates": "June 2026 - Present",
         "tag": "",
         "description": "To Be Updated...",
         "link": "https://www.labcorp.com/",
-        "displayImage": "",
-        "hoverImage": ""
+        "image": ""
       }
     ]
   },
@@ -26,52 +25,47 @@
         "tag": "Ongoing",
         "description": "Developing Reinforcement Learning AI system for hypothesis evaluations",
         "link": "",
-        "displayImage": "",
-        "hoverImage": ""
+        "image": ""
       },
       {
         "id": "3",
         "name": "MCP for UI Design",
         "company": "UCLA HCI Research",
         "dates": "Mar 2026 - Present",
-        "tag": "Researcher, Ongoing [TODO: make this into two circly tags]",
+        "tag": "Ongoing",
         "description": "Exploring MCP’s integration into user workflows, providing structure to UI design process while maintaining for user flexibility and creativity",
         "link": "",
-        "displayImage": "",
-        "hoverImage": ""
+        "image": ""
       },
       {
         "id": "4",
         "name": "AI Agent for Informal Peer Support",
         "company": "UCLA HCI Research",
         "dates": "Jan 2026 - Mar 2026",
-        "tag": "",
+        "tag": "Past",
         "description": "Explore implementation of AutoGen agents in pipelines, including API integration and architecture design for automation. Assisted with initial phases of this project.",
         "link": "",
-        "displayImage": "",
-        "hoverImage": ""
+        "image": ""
       },
       {
         "id": "5",
         "name": "Anayzing User's Usage of AI Meeting Assistants to Support Design Improvements",
         "company": "UCLA HCI Research",
         "dates": "Sept 2025 - Apr 2026",
-        "tag": "Researcher",
+        "tag": "Past",
         "description": "Explored how AI meeting assistants support user workflows to understand areas of improvement. Presented as poster in UR2PhD Research Showcase 2026 and live-presentation in UCLA Undergraduate Research Week 2026",
         "link": "",
-        "displayImage": "",
-        "hoverImage": ""
+        "image": ""
       },
       {
         "id": "6",
         "name": "HALO: Computational & Interactive Support for Hypothesis Generation for Scientific Discovery",
         "company": "UCLA HCI Research",
         "dates": "June 2025 - Apr 2026",
-        "tag": "NSF REU, Under Review",
+        "tag": "Published",
         "description": "Developed a molecular generation platform, integrating large language models, API routing, and database logging to support research workflows. Built pipeline that effectively filtered out 80% of low-quality molecules generated, improving system efficiency and usability.",
         "link": "",
-        "displayImage": "",
-        "hoverImage": ""
+        "image": ""
       },
       {
         "id": "7",
@@ -81,41 +75,37 @@
         "tag": "Published",
         "description": "Implemented and evaluated GraphRAG. Prepared 50 sets of user study documents and analyzed expert responses with model outputs to identify patterns to guide model improvement.",
         "link": "https://aclanthology.org/2026.eacl-long.203/",
-        "displayImage": "",
-        "hoverImage": ""
+        "image": ""
       },
       {
         "id": "8",
         "name": "Interactive Design Patterns in GenAI Applications",
         "company": "UCLA HCI Research",
         "dates": "Mar 2025 - June 2025",
-        "tag": "Researcher",
+        "tag": "Past",
         "description": "Researched and identified 17 interactive design patterns across 20 Generative AI platforms, analyzing differences in user experience and integration strategies.",
         "link": "https://docs.google.com/presentation/d/1Qnv1ukibhbTf95lfyvntBsQbRuRRx4URe5Jp3gL1occ/edit?usp=sharing",
-        "displayImage": "",
-        "hoverImage": ""
+        "image": ""
       },
       {
         "id": "9",
         "name": "Behavioral Indicators of Overreliance During Interaction with Conversational Language Models",
         "company": "UCLA HCI Research",
         "dates": "Oct 2024 - Feb 2025",
-        "tag": "Published",
+        "tag": "Past",
         "description": "Recruited 180+ participants and conducted 8 user experience experiments on human and AI interaction, managing communications with participants.",
         "link": "https://dl.acm.org/doi/full/10.1145/3772318.3790332",
-        "displayImage": "",
-        "hoverImage": ""
+        "image": ""
       },
       {
         "id": "10",
         "name": "RoomPalette: Gen AI for Interior Design",
         "company": "NTU HCI Lab",
         "dates": "June 2024 - Sept 2024",
-        "tag": "",
+        "tag": "Past",
         "description": "[Placeholder] description description description",
         "link": "https://www.roomdreaming.com/en",
-        "displayImage": "",
-        "hoverImage": ""
+        "image": ""
       }
     ]
   },
@@ -130,8 +120,7 @@
         "tag": "",
         "description": "[Placeholder] description description description",
         "link": "https://www.uclaacm.com/about",
-        "displayImage": "",
-        "hoverImage": ""
+        "image": ""
       },
       {
         "id": "12",
@@ -141,8 +130,7 @@
         "tag": "",
         "description": "[Placeholder] description description description",
         "link": "https://www.uclaacm.com/officers#ai",
-        "displayImage": "",
-        "hoverImage": ""
+        "image": ""
       }
     ]
   }

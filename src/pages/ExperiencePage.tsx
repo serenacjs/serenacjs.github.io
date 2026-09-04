@@ -8,10 +8,8 @@ interface ExperienceItem {
   company: string;
   dates: string;
   tag?: string;
-  displayImage?: string;
   description?: string;
   link?: string;
-  hoverImage?: string;
 }
 
 interface ExperienceSection {
@@ -23,11 +21,14 @@ const sections = sectionsData as ExperienceSection[];
 
 export default function ExperiencePage() {
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
+    <div className="min-h-screen">
+      <div className="mx-auto grid min-h-screen max-w-7xl grid-cols-1 gap-6 px-4 py-4 md:grid-cols-[300px_minmax(0,1fr)] md:px-6 md:py-6">
+        <Sidebar />
 
-      <div className="w-2/3 ml-auto overflow-y-auto">
-        <ExperienceSections sections={sections} />
+        <main className="min-w-0 space-y-8 md:space-y-10">
+
+          <ExperienceSections sections={sections} />
+        </main>
       </div>
     </div>
   );

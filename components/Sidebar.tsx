@@ -1,96 +1,162 @@
-'use client';
+import { useState, type MouseEvent } from 'react';
+import { NavLink } from 'react-router-dom';
+import { ArrowDownToLine, GraduationCap, Mail } from 'lucide-react';
 
-import { useState } from 'react';
-import { Mail, GraduationCap, ArrowDownToLine } from "lucide-react";
-import { Link } from 'react-router-dom';
-
-{/** TODO: add in images */}
-{/** TODO: automate this? take everything from the folder automatically*/}
 const images = [
   '/pfp/royce_formal.jpeg',
-  // '/pfp/acm_ai.jpeg',
   '/pfp/garden.png',
-  // '/pfp/getty_ctr.jpeg',
-  // '/pfp/getty_villa.jpeg',
   '/pfp/river.jpeg',
-  '/pfp/jumpy.jpeg'
+  '/pfp/jumpy.jpeg',
 ];
+
+const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+  [
+    'rounded-full px-4 py-2 text-sm tracking-[0.22em] transition',
+    isActive
+      ? 'bg-[color:var(--accent-soft)] text-[color:var(--accent-deep)]'
+      : 'text-[color:var(--muted)] hover:bg-white/70 hover:text-[color:var(--accent-deep)]',
+  ].join(' ');
 
 export default function Sidebar() {
   const [currentImage, setCurrentImage] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+  const [tooltip, setTooltip] = useState<{ x: number; y: number; visible: boolean }>({
+    x: 0,
+    y: 0,
+    visible: false,
+  });
 
   const nextImage = () => {
     setCurrentImage((prev) => (prev + 1) % images.length);
   };
 
+  const updateTooltip = (event: MouseEvent<HTMLButtonElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    setTooltip({
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+      visible: true,
+    });
+  };
+
   return (
-    <div className="w-1/3 h-screen pt-10 fixed">
-
-      {/* navigation */}
-      <header className="flex items-center justify-center">
-        <div className="border-b border-black/20 pb-6 px-6">
-          <nav className="flex gap-10 text-sm lowercase tracking-[0.35em] text-black/70">
-            {/** TODO: maybe maybe maybe add an icon here (in fromt of home)... like a drawing casual thing...?*/}
-            <Link to="/" className="hover:text-black">home</Link>
-            <Link to="/experience" className="hover:text-black">experience</Link>
-          </nav>
+    <aside className="w-full max-w-[300px] min-w-0 justify-self-center xl:sticky xl:top-8 xl:justify-self-start">
+      <div className="rounded-[32px] bg-[color:var(--surface)] p-5 shadow-[var(--shadow)]">
+        <div className="border-b border-[color:var(--border)] pb-5">
+          <div>
+            <p className="text-sm uppercase tracking-[0.3em] text-[color:var(--accent-deep)] text-center">Serena Chang</p>
+          </div>
         </div>
-      </header>
 
-      <div className="left-0 flex flex-col items-center justify-start pt-10 space-y-8">
-        {/* picture */}
-        <div
-          className="relative w-70 h-70 cursor-pointer"
+        <nav className="mt-4 flex flex-wrap items-center justify-center gap-2">
+          <NavLink to="/" className={navLinkClass}>
+            home
+          </NavLink>
+          <NavLink to="/experience" className={navLinkClass}>
+            experience
+          </NavLink>
+        </nav>
+
+        <button
+          type="button"
           onClick={nextImage}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onMouseEnter={updateTooltip}
+          onMouseMove={updateTooltip}
+          onMouseLeave={() => setTooltip((current) => ({ ...current, visible: false }))}
+          className="group mt-6 w-full cursor-pointer overflow-hidden rounded-[28px] p-0 text-left transition hover:-translate-y-0.25"
+          aria-label="Cycle profile image"
         >
-          {/* image */}
-          {/** TODO: make the ui look better, idk how*/}
-          <div className="w-70 h-70 rounded-full overflow-hidden">
+          <div className="relative aspect-[4/4] overflow-hidden rounded-[28px] border border-[color:var(--border)] bg-[linear-gradient(180deg,rgba(250,244,236,0.9),rgba(241,229,215,0.72))]">
             <img
               src={images[currentImage]}
-              alt="Profile"
-              className="w-full h-full object-cover"
+              alt="Serena portrait"
+              className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
             />
+            {tooltip.visible ? (
+              <span
+                className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full rounded-full border border-[color:var(--border)]/70 bg-[rgba(255,248,241,0.78)] px-2.5 py-1 text-[9px] uppercase tracking-[0.22em] text-[color:var(--accent-deep)]/70 backdrop-blur-sm whitespace-nowrap"
+                style={{ left: tooltip.x, top: tooltip.y - 10 }}
+              >
+                click to cycle
+              </span>
+            ) : null}
           </div>
-          
-          {/* dots */}
-          {isHovered && (
-            <div className="absolute left-1/2 -bottom-4 -translate-x-1/2 flex">
-              <div className="flex space-x-2">
-                {images.map((_, index) => (
-                  <div
-                    key={index}
-                    className={`w-3 h-3 rounded-full ${
-                      index === currentImage ? 'bg-black' : 'bg-gray-400'
-                    }`}
-                  />
-                ))}
-              </div>
+          <div className="mt-3 flex items-center justify-center gap-2 px-1 pb-1">
+            {images.map((_, index) => (
+              <span
+                key={index}
+                className={`h-2.5 rounded-full border border-[color:var(--border)] transition-all duration-300 ${
+                  index === currentImage
+                    ? 'w-6 bg-[color:var(--accent-deep)]'
+                    : 'w-2.5 bg-[color:var(--accent-soft)]'
+                }`}
+                aria-hidden="true"
+              />
+            ))}
+          </div>
+        </button>
+
+        <div className="mt-6 space-y-4">
+          <div className="p-0">
+            <p className="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">contact</p>
+            <div className="mt-4 space-y-3 text-sm text-[color:var(--accent-deep)]">
+              <a
+                href="mailto:serenacjs@g.ucla.edu"
+                className="flex items-center gap-3 transition hover:opacity-70"
+              >
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[color:var(--accent-soft)]">
+                  <Mail size={15} />
+                </span>
+                <span>serenacjs@g.ucla.edu</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/serena-chang-878005245"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 transition hover:opacity-70"
+              >
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[color:var(--accent-soft)]">
+                  <img src="/icon/linkedin.png" className="h-4 w-4" alt="" />
+                </span>
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href="https://scholar.google.com/citations?user=30bGPfkAAAAJ&hl=en&oi=ao"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 transition hover:opacity-70"
+              >
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[color:var(--accent-soft)]">
+                  <GraduationCap size={15} />
+                </span>
+                <span>Google Scholar</span>
+              </a>
+              <a
+                href="https://github.com/serenacjs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 transition hover:opacity-70"
+              >
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[color:var(--accent-soft)]">
+                  <img src="/icon/github.svg" className="h-4 w-4" alt="" />
+                </span>
+                <span>GitHub</span>
+              </a>
             </div>
-          )}
-        </div>
+          </div>
 
-        {/* name */}
-        <div className="text-center">
-          <h1 className="text-2xl font-bold underline">Serena Chang</h1>
-        </div>
-
-        {/* contact info */}
-        <div className="flex flex-col space-y-2 text-left">
-          <a href="mailto:serenacjs@g.ucla.edu" className="flex text-lg items-center gap-2 hover:underline"><span className="w-[18px]"><Mail size={18} className="relative right-[1px]"/></span> <span>Email: <span className="italic">serenacjs@g.ucla.edu</span></span> </a>
-          <a></a>
-          <a></a>
-          <a href="https://www.linkedin.com/in/serena-chang-878005245" target="_blank" rel="noopener noreferrer" className="flex text-lg items-center gap-2 hover:underline"><span className="w-[18px]"><img src="/icon/linkedin.png" className="w-4 h-4" alt="GitHub"/></span>LinkedIn</a>
-          <a href="https://scholar.google.com/citations?user=30bGPfkAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" className="flex text-lg items-center gap-2 hover:underline"><span className="w-[18px]"><GraduationCap size={18} className="relative right-[1px]"/></span>Google Scholar</a>
-          <a href="https://github.com/serenacjs" target="_blank" rel="noopener noreferrer" className="flex text-lg items-center gap-2 hover:underline"><span className="w-[18px]"><img src="/icon/github.svg" className="w-4 h-4" alt="GitHub"/></span>GitHub</a>
-          <a></a>
-          <a></a>
-          <a href="/files/JiaSyuan_Chang_Resume.pdf" download className="flex text-lg items-center gap-2 hover:underline"><ArrowDownToLine size={18}/>Resume/CV</a>
+          <a
+            href="/files/JiaSyuan_Chang_Resume.pdf"
+            download
+            className="group flex items-center justify-between border-t border-[color:var(--border)] pt-4 text-sm text-[color:var(--accent-deep)] transition hover:opacity-70"
+          >
+            <span className="flex flex-col">
+              <span className="tracking-[0.2em] uppercase">Resume / CV</span>
+              <span className="mt-1 text-xs tracking-[0.14em] text-[color:var(--muted)]">Download PDF</span>
+            </span>
+            <ArrowDownToLine size={16} className="transition group-hover:translate-y-0.5" />
+          </a>
         </div>
       </div>
-    </div>
+    </aside>
   );
 }

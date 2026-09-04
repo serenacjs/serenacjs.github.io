@@ -1,21 +1,14 @@
 [
   {
     "id": "1",
-    "title": "[Incoming] Software Engineer Intern",
+    "title": "Software Engineer Intern",
     "organization": "Labcorp",
-    "dates": "--",
+    "dates": "Jun 2026 - Present",
     "link": "https://www.labcorp.com/"
   },
   {
     "id": "2",
-    "title": "Researcher",
-    "organization": "UCLA HCI Research",
-    "dates": "Mar 2025 - Present",
-    "link": "https://hci.ucla.edu/#projects"
-  },
-  {
-    "id": "3",
-    "title": "Research Assistant",
+    "title": "Undergrad Researcher",
     "organization": "UCLA HCI Research",
     "dates": "Oct 2024 - Present",
     "link": "https://hci.ucla.edu/#projects"
