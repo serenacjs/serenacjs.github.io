@@ -6,9 +6,9 @@
         "id": "1",
         "name": "Software Engineer Intern",
         "company": "Labcorp",
-        "dates": "June 2026 - Present",
+        "dates": "June 2026 - Sept 2026",
         "tag": "",
-        "description": "To Be Updated...",
+        "description": "Designed and prototyped an Agentic AI workflow for natural-language test-result search. Built a Kafka-to-Oracle data pipeline to consume, process, and store streaming events for automated real-time data collection.",
         "link": "https://www.labcorp.com/",
         "image": ""
       }
@@ -19,11 +19,11 @@
     "items": [
       {
         "id": "2",
-        "name": "Hypothesis Evaluation Agent",
+        "name": "Reinforcement Learning Hypothesis Evaluation Agent",
         "company": "UCLA HCI Research",
         "dates": "Apr 2026 - Present",
         "tag": "Ongoing",
-        "description": "Developing Reinforcement Learning AI system for hypothesis evaluations",
+        "description": "Designed and implemented a plausibility reward model for scientific hypothesis generation, including expert-labeling protocols, an annotation UI, and model fine-tuning and evaluation on a 7K-example dataset.",
         "link": "",
         "image": ""
       },
@@ -31,9 +31,9 @@
         "id": "3",
         "name": "MCP for UI Design",
         "company": "UCLA HCI Research",
-        "dates": "Mar 2026 - Present",
-        "tag": "Ongoing",
-        "description": "Exploring MCP’s integration into user workflows, providing structure to UI design process while maintaining for user flexibility and creativity",
+        "dates": "Mar 2026 - Jun 2026",
+        "tag": "Past",
+        "description": "Exploring MCP’s integration into user workflows, providing structure to UI design process while maintaining for user flexibility and creativity.",
         "link": "",
         "image": ""
       },
@@ -53,29 +53,29 @@
         "company": "UCLA HCI Research",
         "dates": "Sept 2025 - Apr 2026",
         "tag": "Past",
-        "description": "Explored how AI meeting assistants support user workflows to understand areas of improvement. Presented as poster in UR2PhD Research Showcase 2026 and live-presentation in UCLA Undergraduate Research Week 2026",
+        "description": "Explored how AI meeting assistants support user workflows to understand areas of improvement. Presented as poster in UR2PhD Research Showcase 2026 and live-presentation in UCLA Undergraduate Research Week 2026.",
         "link": "",
         "image": ""
       },
       {
         "id": "6",
-        "name": "HALO: Computational & Interactive Support for Hypothesis Generation for Scientific Discovery",
+        "name": "UIST '26 | HALO: Computational & Interactive Support for Hypothesis Generation for Scientific Discovery",
         "company": "UCLA HCI Research",
         "dates": "June 2025 - Apr 2026",
         "tag": "Published",
         "description": "Developed a molecular generation platform, integrating large language models, API routing, and database logging to support research workflows. Built pipeline that effectively filtered out 80% of low-quality molecules generated, improving system efficiency and usability.",
-        "link": "",
-        "image": ""
+        "link": "https://arxiv.org/abs/2607.18564",
+        "image": "/public/experience/research/HALO.png"
       },
       {
         "id": "7",
-        "name": "RAGPPI: Retrieval-Augmented Generation Benchmark for Protein–Protein Interactions in Drug Discovery",
+        "name": "EACL '26 | RAGPPI: Retrieval-Augmented Generation Benchmark for Protein–Protein Interactions in Drug Discovery",
         "company": "UCLA HCI Research",
         "dates": "Apr 2025 - Dec 2025",
         "tag": "Published",
         "description": "Implemented and evaluated GraphRAG. Prepared 50 sets of user study documents and analyzed expert responses with model outputs to identify patterns to guide model improvement.",
         "link": "https://aclanthology.org/2026.eacl-long.203/",
-        "image": ""
+        "image": "/public/experience/research/RAGPPI.png"
       },
       {
         "id": "8",
@@ -103,7 +103,7 @@
         "company": "NTU HCI Lab",
         "dates": "June 2024 - Sept 2024",
         "tag": "Past",
-        "description": "[Placeholder] description description description",
+        "description": "Evaluated performance of Segment Anything Model, IP-Adapter, ControlNet for image processing; debugged multi-model integration, improved image processing pipeline, accessed and managed AWS S3 files and data.",
         "link": "https://www.roomdreaming.com/en",
         "image": ""
       }
@@ -118,7 +118,7 @@
         "company": "ACM AI at UCLA",
         "dates": "Mar 2026 - Present",
         "tag": "",
-        "description": "[Placeholder] description description description",
+        "description": "Lead team of 40 officers and advisors to organize workshops, speaker events, and projects for 200+ active members.",
         "link": "https://www.uclaacm.com/about",
         "image": ""
       },
@@ -128,7 +128,7 @@
         "company": "ACM AI at UCLA",
         "dates": "Apr 2025 - Mar 2026",
         "tag": "",
-        "description": "[Placeholder] description description description",
+        "description": "Organized technical and academic events, including 2 hackathons and 3 academic panels, connecting over 250 attendees.",
         "link": "https://www.uclaacm.com/officers#ai",
         "image": ""
       }

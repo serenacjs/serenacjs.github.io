@@ -8,8 +8,7 @@ interface ExperienceCardProps {
   tag?: string;
   description?: string;
   link?: string;
-  displayImage?: string;
-  hoverImage?: string;
+  image?: string;
 }
 
 export default function ExperienceCard({
@@ -19,18 +18,10 @@ export default function ExperienceCard({
   tag,
   description,
   link,
-  displayImage,
-  hoverImage,
+  image
 }: ExperienceCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const imageSrc = useMemo(() => {
-    if (isHovered && hoverImage) {
-      return hoverImage;
-    }
-
-    return displayImage || hoverImage || '';
-  }, [displayImage, hoverImage, isHovered]);
 
   return (
     <article
@@ -78,8 +69,13 @@ export default function ExperienceCard({
         ].join(' ')}
       >
         <div className="min-h-0">
-          <div className="grid gap-4 px-5 py-5 md:grid-cols-[minmax(0,1.15fr)_minmax(230px,0.85fr)] md:items-stretch">
-            <div className="space-y-4">
+          <div
+            className={[
+              'grid items-start gap-4 px-5 py-5',
+              image ? 'grid-cols-[minmax(0,1fr)_40%]' : '',
+            ].join(' ')}
+          >
+            <div className="min-w-0 space-y-4">
               {description ? (
                 <p className="max-w-3xl text-sm leading-7 text-[color:var(--foreground)]/85">
                   {description}
@@ -90,38 +86,28 @@ export default function ExperienceCard({
                 </p>
               )}
 
-              <div className="flex flex-wrap gap-3">
-                {link ? (
-                  <a
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-white/60 px-4 py-2 text-xs uppercase tracking-[0.22em] text-[color:var(--accent-deep)] transition hover:bg-white"
-                  >
-                    <ExternalLink size={14} />
-                    Open link
-                  </a>
-                ) : null}
-              </div>
+              {link ? (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex max-w-full items-center gap-2 rounded-full border border-[color:var(--border)] px-4 py-2 text-xs tracking-[0.22em] text-[color:var(--accent-deep)] transition hover:bg-[var(--muted)]/25"
+                >
+                  <ExternalLink size={14}/>
+                  LINK:<span className="tracking-[0.125em]">{link}</span>
+                </a>
+              ) : null}
             </div>
 
-            <div className="overflow-hidden rounded-[24px] border border-[color:var(--border)] bg-white/60">
-              {imageSrc ? (
+            {image ? (
+              <div className="w-full overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white/60">
                 <img
-                  src={imageSrc}
+                  src={image}
                   alt={`${name} preview`}
-                  className="h-full min-h-[220px] w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
                 />
-              ) : (
-                <div className="flex min-h-[220px] flex-col justify-between p-5">
-                  <div className="space-y-2">
-                    <p className="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">
-                      Image slot
-                    </p>
-                  </div>
-                </div>
-              )}
-            </div>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

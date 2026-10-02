@@ -9,8 +9,9 @@
   --accent-soft: #eadcc9; /* circles for contact and tabs */
   --accent-deep: hsl(26, 34%, 20%); /* experience titles, contacts, name*/
   /* --shadow: 0 24px 60px rgba(86, 64, 46, 0.08); */ /* side panel's shadow */
-  --font-heading: "Instrument Serif", Georgia, serif; /**/
-  --font-body: "Inter", sans-serif; /**/
+  --font-heading: "Instrument Serif", Georgia, serif; 
+  /* --font-heading: "Inter", sans-serif; */
+  --font-body: "Inter", sans-serif;
 }
 
 @theme inline {

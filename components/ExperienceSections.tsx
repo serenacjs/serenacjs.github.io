@@ -66,9 +66,9 @@ function SectionCard({
   }
 
   return (
-    <section className="space-y-3">
+    <section className="">
       <div className="flex items-end justify-between gap-4">
-        <h3 className="font-heading text-aseb text-[color:var(--accent-deep)]">{title}</h3>
+        <h3 className="font-heading text-base text-[color:var(--accent-deep)]">{title}</h3>
       </div>
 
       <div className="divide-y divide-[color:var(--border)]">
@@ -112,7 +112,7 @@ export default function ExperienceSections({ sections }: ExperienceSectionsProps
         return (
           <section
             key={section.category}
-            className="rounded-[5px] py-5"
+            className="py-5"
           >
             <button
               type="button"
@@ -121,8 +121,8 @@ export default function ExperienceSections({ sections }: ExperienceSectionsProps
               aria-expanded={isOpen}
               aria-label={isOpen ? `Collapse ${section.category}` : `Expand ${section.category}`}
             >
-              <div className="space-y-2">
-                <h2 className="font-heading text-3xl text-[color:var(--accent-deep)] sm:text-3xl">
+              <div className="">
+                <h2 className="font-heading text-2xl text-[color:var(--accent-deep)] sm:text-2xl">
                   {sectionLabel}
                 </h2>
               </div>
@@ -136,7 +136,7 @@ export default function ExperienceSections({ sections }: ExperienceSectionsProps
             </button>
 
             {isOpen ? (
-              <div className="mt-6 space-y-8">
+              <div className="mt-6 space-y-5">
                 {isResearch ? (
                   <>
                     <SectionCard title='Published' items={researchBuckets.published} />
