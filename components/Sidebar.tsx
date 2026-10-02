@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 import { ArrowDownToLine, GraduationCap, Mail } from 'lucide-react';
 
 const images = [
-  '/pfp/royce_formal.jpeg',
-  '/pfp/garden.png',
-  '/pfp/river.jpeg',
-  '/pfp/jumpy.jpeg',
+  '/images/pfp/royce_formal.jpeg',
+  '/images/pfp/garden.png',
+  '/images/pfp/river.jpeg',
+  '/images/pfp/jumpy.jpeg',
 ];
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
