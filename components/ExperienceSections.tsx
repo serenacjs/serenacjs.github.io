@@ -12,8 +12,7 @@ interface ExperienceItem {
   tag?: string;
   description?: string;
   link?: string;
-  displayImage?: string;
-  hoverImage?: string;
+  image?: string;
 }
 
 interface ExperienceSection {
