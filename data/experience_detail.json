@@ -65,7 +65,7 @@
         "tag": "Published",
         "description": "Developed a molecular generation platform, integrating large language models, API routing, and database logging to support research workflows. Built pipeline that effectively filtered out 80% of low-quality molecules generated, improving system efficiency and usability.",
         "link": "https://arxiv.org/abs/2607.18564",
-        "image": "/public/experience/research/HALO.png"
+        "image": "/experience/research/HALO.png"
       },
       {
         "id": "7",
@@ -75,7 +75,7 @@
         "tag": "Published",
         "description": "Implemented and evaluated GraphRAG. Prepared 50 sets of user study documents and analyzed expert responses with model outputs to identify patterns to guide model improvement.",
         "link": "https://aclanthology.org/2026.eacl-long.203/",
-        "image": "/public/experience/research/RAGPPI.png"
+        "image": "/experience/research/RAGPPI.png"
       },
       {
         "id": "8",
